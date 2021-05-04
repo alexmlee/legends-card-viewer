@@ -16,7 +16,14 @@ body {
 
 :root {
   --viewport-desktop: "990px";
-  --header-height: 80px;
+  --header-height: 60px;
+}
+
+@media (min-width: 990px) {
+  :root {
+    --header-height: 135px;
+    
+  }
 }
 
 

@@ -30,7 +30,7 @@ export const THEMES: SiteThemes = {
     primary: "#7ea515",// good
     loader: 'Spin-1s-200px-forest.svg',
     background: "#55470e",
-    secondary: "#55470e",
+    secondary: "#3f3407",
     tertiary: "#141304",
     quaternary: "#241804",
     quinary: "#3f3407",

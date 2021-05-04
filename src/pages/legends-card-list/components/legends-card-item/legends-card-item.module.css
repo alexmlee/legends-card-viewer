@@ -17,6 +17,13 @@
 
 .imageContainer {
   /* margin: auto; */
+  margin-bottom: 5px;
+
+}
+
+.textContainer > * {
+  margin-bottom: 5px;
+  color: var(--text-color)
 }
 
 .image {
@@ -27,7 +34,7 @@
 
 @media (min-width: 990px) {
   .legendsCard {
-    height: 200px;
+    height: 300px;
     width: 200px;
     margin-right: 25px;
   }

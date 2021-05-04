@@ -4,16 +4,18 @@ import Css from "./header.module.css"
 
 export const Header: FC = () => {
   const { theme, setTheme } = useContext(ThemeContext);
-
   
   return (
     <div className={Css.headerContainer}>
+      <div className={Css.headerFill}></div>
       <h1 className={Css.header}>
-        Elder Scrolls Legends {theme}
+        Elder Scrolls Legends
       </h1>
-      <button onClick={() => setTheme( "default")} > Default</button>
-      <button onClick={() => setTheme( "forest")} > Forest</button>
-      <button onClick={() => setTheme( "dark")} > Dark</button>
+      <div className={Css.themeContainer}>
+        <button className={theme === "default" ? `${Css.active}` : ""} onClick={() => setTheme( "default")} > Default</button>
+        <button className={theme === "forest" ? `${Css.active}` : ""} onClick={() => setTheme( "forest")} > Forest</button>
+        <button className={theme === "dark" ? `${Css.active}` : ""} onClick={() => setTheme( "dark")} > Dark</button>
+      </div>
     </div>
     
   )
