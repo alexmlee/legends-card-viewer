@@ -6,19 +6,23 @@ export interface SiteTheme {
   tertiary: string;
   quaternary: string;
   quinary: string;
+  [x: string]: string;
 }
 
-export interface SiteThemes {
-  [x: string]: SiteTheme
-}
+export type SiteThemes = {
+  [x in ThemeNames]: SiteTheme;
+};
 
-export const themes: SiteThemes = {
+export const THEMES: SiteThemes = {
   default: {
-    primary: '#000000',
+    primary: '#006dc7',
     secondary: '#eeeeee',
     tertiary: '#eeeeee',
     quaternary: '#eeeeee',
     quinary: '#eeeeee',
+    // textColor
+    // separatorColor
+    // backgroundColor
   },
   forest: {
     primary: "#7ea515",
@@ -36,9 +40,9 @@ export const themes: SiteThemes = {
   },
 }
 
-export enum ThemeNames { "default", "forest", "dark"}
+export type ThemeNames = "default" | "forest" | "dark"
 
 export const ThemeContext = React.createContext({
   theme: "default",
-  setTheme: (newState: "string") => {},
+  setTheme: (newState: ThemeNames) => {},
 });

@@ -27,7 +27,7 @@ export const LegendsCardListPage: React.FC = props => {
   
   console.log('Flag 1.1')
   useEffect(() => {
-    fetch("https://api.elderscrollslegends.io/v1/cards")
+    fetch("https://api.elderscrollslegends.io/v1/cards?pageSize=20")
       .then(res => res.json())
       .then(
         (result) => {
