@@ -49,11 +49,7 @@ export const LegendsCardListPage: React.FC = props => {
         // socialMetaData={}
         >
         { error && <div> Error</div>}
-        <LegendsCardListContent cardList={cardList} />
+        <LegendsCardListContent cardList={cardList} isLoaded={isLoaded} />
       </BaseLayout>
   )
 }
-
-// LegendsCardListPage.getInitialProps = async {
-
-// }

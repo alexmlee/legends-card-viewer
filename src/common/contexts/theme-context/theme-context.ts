@@ -15,7 +15,9 @@ export type SiteThemes = {
 
 export const THEMES: SiteThemes = {
   default: {
-    primary: '#006dc7',
+    primary: '#006dc7',// good
+    background: '#FFFFF',
+    loader: 'Spin-1s-200px-default.svg',
     secondary: '#eeeeee',
     tertiary: '#eeeeee',
     quaternary: '#eeeeee',
@@ -25,14 +27,18 @@ export const THEMES: SiteThemes = {
     // backgroundColor
   },
   forest: {
-    primary: "#7ea515",
+    primary: "#7ea515",// good
+    loader: 'Spin-1s-200px-forest.svg',
+    background: "#55470e",
     secondary: "#55470e",
     tertiary: "#141304",
     quaternary: "#241804",
     quinary: "#3f3407",
   },
   dark: {
-    primary: "#7ea515",
+    primary: "#006dc7", // good
+    background: "#171616", // good
+    loader: 'Spin-1s-200px-default.svg',
     secondary: "#55470e",
     tertiary: "#141304",
     quaternary: "#241804",
@@ -42,7 +48,13 @@ export const THEMES: SiteThemes = {
 
 export type ThemeNames = "default" | "forest" | "dark"
 
-export const ThemeContext = React.createContext({
+export interface ThemeContextInterface {
+  theme: ThemeNames;
+  // activeTheme: SiteTheme;
+  setTheme: (newState: ThemeNames) => void;
+}
+
+export const ThemeContext = React.createContext<ThemeContextInterface>({
   theme: "default",
   setTheme: (newState: ThemeNames) => {},
 });

@@ -1,0 +1,42 @@
+
+.legendsCard {
+  height: 600px;
+  width: 100%;
+  max-width: 350px;
+  border: 2px solid var(--primary);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  margin-right: 5px;
+}
+
+.legendsCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.imageContainer {
+  /* margin: auto; */
+}
+
+.image {
+  height: 300px;
+  display: block;
+  margin: auto;
+}
+
+@media (min-width: 990px) {
+  .legendsCard {
+    height: 200px;
+    width: 200px;
+    margin-right: 25px;
+  }
+
+  .imageContainer {
+    /* overflow: hidden; */
+  }
+
+  .image {
+    height: 150px;
+  }
+}

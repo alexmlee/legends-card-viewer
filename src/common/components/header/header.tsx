@@ -8,10 +8,12 @@ export const Header: FC = () => {
   
   return (
     <div className={Css.headerContainer}>
-      <h1>
+      <h1 className={Css.header}>
         Elder Scrolls Legends {theme}
       </h1>
-      <button onClick={() => setTheme( theme === "default" ? "forest" : "default")} />
+      <button onClick={() => setTheme( "default")} > Default</button>
+      <button onClick={() => setTheme( "forest")} > Forest</button>
+      <button onClick={() => setTheme( "dark")} > Dark</button>
     </div>
     
   )

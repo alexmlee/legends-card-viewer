@@ -7,6 +7,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  /* margin-top: 0; */
+  background-color: var(--background);
+
+}
+
+
+:root {
+  --viewport-desktop: "990px";
+  --header-height: 80px;
+}
+
+
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

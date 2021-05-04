@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+
+import 'normalize.css';
+
 import { LegendsCardListPage } from './pages/legends-card-list/legends-card-list-page';
 
 function App() {
