@@ -20,6 +20,12 @@ export const LegendsCardListPage: React.FC = props => {
   const [fetching, setFetching] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1)
 
+  const observed = useRef(null);
+
+  useEffect(() => {
+    console.log("FLAG Z:    " + observed.current);
+  }, [observed]);
+
   useEffect( () => {
     async function fetchCards() {
       console.log("fetch cards is being called");
@@ -50,6 +56,39 @@ export const LegendsCardListPage: React.FC = props => {
     setIsLoaded(true);
   }
 
+      // Create ref to attach to the loader component
+      const loader = useRef(null);
+
+      const loadMore = useCallback((entries) => {
+  
+          const target = entries[0];
+          if (target.isIntersecting) {
+              isLoaded && setPage(page+1)
+          }
+      }, [isLoaded]);
+  
+  
+
+  useEffect(() => {
+    const options = {
+        root: null, // window by default
+        rootMargin: '0px',
+        threshold: 0.25
+    };
+
+    // Create observer
+    const observer = new IntersectionObserver(loadMore, options);
+
+    // observer the loader
+    if (loader && loader.current) {
+      
+        observer.observe(loader.current!);
+    }
+
+    // clean up on willUnMount
+    return () => observer.unobserve(loader.current!);
+}, [loader, loadMore]);
+
 
   return (
       <BaseLayout
@@ -62,9 +101,9 @@ export const LegendsCardListPage: React.FC = props => {
           isLoaded={isLoaded} 
           fetchMoreCards={() => setPage(page+1)} 
           searchAction={handleSearch}/>
-        {/* <div ref={ref}>
+        <div ref={loader}>
           Load More 
-        </div> */}
+        </div>
       </BaseLayout>
   )
 }
