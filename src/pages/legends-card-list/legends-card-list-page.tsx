@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { BaseLayout } from '../../common/components/base-layout/base-layout';
 import { ElderScrollsLegends } from './adapters/elder-scrolls-legends-adapter/elder-scrolls-legends-adapter';
 import { LegendsCardListContent } from './components/legends-card-list-content/legends-card-list-content';
@@ -17,10 +17,9 @@ export const LegendsCardListPage: React.FC = props => {
   const [cardList, setCardList] = useState<CardList>(initialList);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [error, setError] = useState(null);
+  const [fetching, setFetching] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1)
 
-  const loader = useRef(null);
-  
   useEffect( () => {
     async function fetchCards() {
       console.log("fetch cards is being called");
@@ -38,32 +37,6 @@ export const LegendsCardListPage: React.FC = props => {
     fetchCards();
   }, [page])
 
-  useEffect( () => {
-    const options = {
-      root: null,
-      rootMargin: "20px",
-      threshold: 1.0
-    }
-    const observer = new IntersectionObserver(handleObserver, options)
-    if (loader && loader.current) {
-      /* tslint: disable-next-line */
-      observer.observe(loader.current!);
-    }
-  }, [])
-
-
-  const handleObserver = (entities: any) => {
-    console.log("FLAG 4")
-    const target = entities[0];
-    if (target.isIntersecting) {
-      setPage(page+1)
-    }
-  }
-
-  // const handleObserver(entities: any, observer: any) {
-
-
-  // }
   // TODO: move search functionality into primary fetchCards functionality
   const handleSearch = (searchText: string): void => {
     setIsLoaded(false);
@@ -84,10 +57,16 @@ export const LegendsCardListPage: React.FC = props => {
         // socialMetaData={}
         >
         { error && <div> Error</div>}
-        <LegendsCardListContent cardList={cardList} isLoaded={isLoaded} fetchMoreCards={() => setPage(page+1)} searchAction={handleSearch}/>
-        <div ref={loader}>
-          Load More
-        </div>
+        <LegendsCardListContent 
+          cardList={cardList} 
+          isLoaded={isLoaded} 
+          fetchMoreCards={() => setPage(page+1)} 
+          searchAction={handleSearch}/>
+        {/* <div ref={ref}>
+          Load More 
+        </div> */}
       </BaseLayout>
   )
 }
+
+

@@ -11,7 +11,12 @@ export interface LegendsCardListContentProps {
   searchAction: (searchText: string) => void;
 }
 
-export const LegendsCardListContent: React.FC<LegendsCardListContentProps> = ({cardList, isLoaded, fetchMoreCards, searchAction}) => {
+export const LegendsCardListContent: React.FC<LegendsCardListContentProps> = ({
+  cardList, 
+  isLoaded, 
+  fetchMoreCards, 
+  searchAction
+}) => {
   const { theme } = useContext(ThemeContext);
   const [localText, setLocalText] = useState<string>("");
   const handleChange = (event: any) => {
@@ -28,11 +33,9 @@ export const LegendsCardListContent: React.FC<LegendsCardListContentProps> = ({c
       <div className={Css.listContainer}>
         <LegendsCardList cardList={cardList} />
       </div>
-    {/* { isLoaded && 
       <div className={Css.showMoreContainer}>
         <button onClick={() => fetchMoreCards()} >SHOW MORE</button>
       </div>
-    } */}
     { !isLoaded && 
       <div className={Css.preloader}>
         <img src={THEMES[theme].loader} alt="spinner"/> 
