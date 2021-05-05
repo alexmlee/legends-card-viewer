@@ -20,11 +20,6 @@ export const LegendsCardListPage: React.FC = props => {
   const [fetching, setFetching] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1)
 
-  const observed = useRef(null);
-
-  useEffect(() => {
-    console.log("FLAG Z:    " + observed.current);
-  }, [observed]);
 
   useEffect( () => {
     async function fetchCards() {
@@ -60,7 +55,7 @@ export const LegendsCardListPage: React.FC = props => {
       const loader = useRef(null);
 
       const loadMore = useCallback((entries) => {
-  
+          console.log("in the callback")
           const target = entries[0];
           if (target.isIntersecting) {
               isLoaded && setPage(page+1)
@@ -78,7 +73,7 @@ export const LegendsCardListPage: React.FC = props => {
 
     // Create observer
     const observer = new IntersectionObserver(loadMore, options);
-
+    
     // observer the loader
     if (loader && loader.current) {
       
