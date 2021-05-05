@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 export interface CardList {
-  cards?: (CardData)[] | null;
+  cards: CardData[];
   _pageSize: number;
   _totalCount: number;
 }

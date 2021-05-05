@@ -29,15 +29,11 @@ export const BaseLayout: React.FC<BaseLayoutProps> = ({
   const initialThemeContext = { theme, setTheme}
 
   const setCSSVariables = (theme: ThemeNames) => {
-    console.log("Flag 2    " + THEMES[theme])
     for (const value in THEMES[theme]) {
-      console.log("Flag 2.1    " + value)
-      console.log("Flag 2.2    " + THEMES[theme][value])
       document.documentElement.style.setProperty(`--${value}`, THEMES[theme][value])
     }
   }
   useEffect(() => {
-    console.log("FLag 3     " + theme)
     setCSSVariables(theme);
   }, [theme]);
 

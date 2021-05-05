@@ -7,7 +7,8 @@ export const Header: FC = () => {
   
   return (
     <div className={Css.headerContainer}>
-      <div className={Css.headerFill}></div>
+      <div className={Css.headerFill}>
+      </div>
       <h1 className={Css.header}>
         Elder Scrolls Legends
       </h1>

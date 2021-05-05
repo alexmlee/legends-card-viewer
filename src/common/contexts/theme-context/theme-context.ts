@@ -18,6 +18,7 @@ export const THEMES: SiteThemes = {
     primary: '#006dc7',// good
     background: '#FFFFF',
     loader: 'Spin-1s-200px-default.svg',
+    "text-color": "black",
     secondary: '#eeeeee',
     tertiary: '#eeeeee',
     quaternary: '#eeeeee',
@@ -30,6 +31,7 @@ export const THEMES: SiteThemes = {
     primary: "#7ea515",// good
     loader: 'Spin-1s-200px-forest.svg',
     background: "#55470e",
+    "text-color": "black",
     secondary: "#3f3407",
     tertiary: "#141304",
     quaternary: "#241804",
@@ -38,6 +40,7 @@ export const THEMES: SiteThemes = {
   dark: {
     primary: "#006dc7", // good
     background: "#171616", // good
+    "text-color": "white",
     loader: 'Spin-1s-200px-default.svg',
     secondary: "#55470e",
     tertiary: "#141304",
