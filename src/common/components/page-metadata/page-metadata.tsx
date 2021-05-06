@@ -19,7 +19,7 @@ export const PageMetaData: React.FC<PageMetaDataProps> = ({pageInfo, socialMetaD
       <meta property="twitter:site" content={pageInfo.canonicalUrl}/>
       <meta property="twitter:title" content={pageInfo.title}/>
       <meta property="twitter:description" content={pageInfo.description}/>
-      <meta property="twitter:image" content={socialMetaData.imageUrl}/>
+      <meta property="twitter:image" content="https://elderscrollslegends.io/images/bg.jpg"/>
       {/* <meta name="twitter:domain" content={pageInfo.canonicalUrl}/> */}
       <meta name="twitter:url" content={pageInfo.canonicalUrl}/>
     </Helmet>
