@@ -1,5 +1,4 @@
 import { CardList } from "../../legends-card-list-page.data";
-// const axios = require('axios').default;
 import axios from 'axios'
 
 export const CARDS_PER_LOAD = 20;

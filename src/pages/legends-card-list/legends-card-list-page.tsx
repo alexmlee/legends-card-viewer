@@ -25,15 +25,10 @@ export const LegendsCardListPage: React.FC = props => {
     setInitialLoad(false);
   }, []);
 
+  // Fetch functionality
   useEffect( () => {
     async function fetchCards() {
-      console.log("fetch cards is being called");
-      console.log("INITIAL LOAD: " + initialLoad)
-      console.log("page: " + page)
-
-      console.log("total count: " + cardList._totalCount)
       if (initialLoad  || (!initialLoad && (page - 1 * CARDS_PER_LOAD < cardList._totalCount)) ) {
-
         const response = await ElderScrollsLegends.getCards(page, searchText)
         // TODO: replace this with a useReduce/useCallback usage
         if (page !== 1 ) {
@@ -56,13 +51,11 @@ export const LegendsCardListPage: React.FC = props => {
     fetchCards();
   }, [page])
 
-  // TODO: move search functionality into primary fetchCards functionality
+  // Search Functionality
   const handleSearch = (inComingSearchText: string): void => {
     setIsLoaded(false);
     console.log('handling search +' + inComingSearchText)
     setSearchText(inComingSearchText);
-    // setPage(1);
-    // setCardList(initialList)
     searchCards(inComingSearchText);
   }
 
@@ -76,20 +69,14 @@ export const LegendsCardListPage: React.FC = props => {
     console.log(page);
   }
 
-  // Create ref to attach to the loader component
+  // Infinite Scroll functionality
   const loader = useRef(null);
-
   const loadMore = useCallback((entries) => {
-      console.log("in the callback")
       const target = entries[0];
       if (target.isIntersecting) {
-        console.log('comparing page + 1 * 20: ' + (page)*20 +" wow and cardList._totalCount:    " + cardList._totalCount)
           isLoaded && (page * CARDS_PER_LOAD < cardList._totalCount) && setPage(page+1)
       }
   }, [isLoaded]);
-
-  
-
   useEffect(() => {
     const options = {
         root: null, // window by default
@@ -106,7 +93,6 @@ export const LegendsCardListPage: React.FC = props => {
     // clean up on willUnMount
     return () => observer.unobserve(loader.current!);
 }, [loader, loadMore]);
-
 
   return (
       <BaseLayout
@@ -125,5 +111,3 @@ export const LegendsCardListPage: React.FC = props => {
       </BaseLayout>
   )
 }
-
-

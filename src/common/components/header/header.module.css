@@ -26,12 +26,6 @@
 
 .themeContainer > button {
   width: 75px;
-  /* background-color: var(--background);
-  border-radius: 10px;
-  border: 2px solid black;
-  padding: 5px 10px;
-  font-weight: bold; */
-  
 }
 
 .header {
@@ -44,8 +38,6 @@
 }
 
 @media (min-width: 990px) {
-  .themeContainer > button {
-  }
   .headerFill {
     flex: 1 1 25%;
   }

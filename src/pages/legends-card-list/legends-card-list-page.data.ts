@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { PageInfo, SocialMetaData } from "../../common/components/base-layout/base-layout";
 
 export const LegendsCardListPageInfo: PageInfo = {

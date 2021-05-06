@@ -52,10 +52,6 @@ export const LegendsCardListContent: React.FC<LegendsCardListContentProps> = ({
       </div>
     }
       </div>
-      {/* <div className={Css.showMoreContainer}>
-        <button onClick={() => fetchMoreCards()} >SHOW MORE</button>
-      </div> */}
-
     </>
   )
 }

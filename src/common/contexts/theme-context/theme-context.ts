@@ -15,7 +15,7 @@ export type SiteThemes = {
 
 export const THEMES: SiteThemes = {
   default: {
-    primary: '#006dc7',// good
+    primary: '#006dc7',
     background: '#FFFFF',
     loader: 'Spin-1s-200px-default.svg',
     "text-color": "black",
@@ -23,12 +23,9 @@ export const THEMES: SiteThemes = {
     tertiary: '#eeeeee',
     quaternary: '#eeeeee',
     quinary: '#eeeeee',
-    // textColor
-    // separatorColor
-    // backgroundColor
   },
   forest: {
-    primary: "#7ea515",// good
+    primary: "#7ea515",
     loader: 'Spin-1s-200px-forest.svg',
     background: "#55470e",
     "text-color": "black",
@@ -38,8 +35,8 @@ export const THEMES: SiteThemes = {
     quinary: "#3f3407",
   },
   dark: {
-    primary: "#006dc7", // good
-    background: "#171616", // good
+    primary: "#006dc7",
+    background: "#171616",
     "text-color": "white",
     loader: 'Spin-1s-200px-default.svg',
     secondary: "#006dc7",
@@ -53,7 +50,6 @@ export type ThemeNames = "default" | "forest" | "dark"
 
 export interface ThemeContextInterface {
   theme: ThemeNames;
-  // activeTheme: SiteTheme;
   setTheme: (newState: ThemeNames) => void;
 }
 

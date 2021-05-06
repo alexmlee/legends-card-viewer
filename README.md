@@ -26,16 +26,21 @@ If satisifed, then run `netlify deploy --prod`, with the `./build` directory
  - Netlify - although not present in the code base, Netlify is the deployment utility/platform in use
 
 
+## Notes
+
+- Viewports: The site supports a mobile viewport up to 990px, and then it switches to a desktop design.
+
 ## Next Steps
 
 ### Code/Design Improvements
+- clean up useEffects used in fetching data and infinite scroll
 - unit testing
 - accessibility and performance auditing
-- clean up useEffects used in fetching data and infinite scroll
 - improved styling on buttons and other features
 - flesh out theming and use 3rd, 4th, 5th colors
 - error handling, rate limiting in the data fetching
-- clean up / test Social sharing functionality
+- clean up / test Social/metadata functionality
+- catch 'search' event from search input being cleared, and retrigger search
 
 ### Functionality
 
