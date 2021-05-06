@@ -14,9 +14,9 @@ Run `npm start` from the repo directory. This will automatically open your brows
 
 Run `npm run build` to cut a release build into the `./build` directory
 
-Using Netlify, run `netlify deploy` and inspect the draft release
+Using Netlify, run `netlify deploy`, provide it with the `./build` directory, and inspect the draft release
 
-If satisifed, then run `netlify deploy --prod`
+If satisifed, then run `netlify deploy --prod`, with the `./build` directory
 
 ## External Dependencies
  - Create React App was used to generate the base part of this app, and that includes the collection of react and testing related libraries
