@@ -13,6 +13,7 @@ export const Header: FC = () => {
         Elder Scrolls Legends
       </h1>
       <div className={Css.themeContainer}>
+        <div className={Css.themeLabel}>Themes</div>
         <button className={theme === "default" ? `${Css.active}` : ""} onClick={() => setTheme( "default")} > Default</button>
         <button className={theme === "forest" ? `${Css.active}` : ""} onClick={() => setTheme( "forest")} > Forest</button>
         <button className={theme === "dark" ? `${Css.active}` : ""} onClick={() => setTheme( "dark")} > Dark</button>

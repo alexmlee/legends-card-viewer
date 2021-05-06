@@ -10,13 +10,13 @@ body {
 * {
   /* margin-top: 0; */
   background-color: var(--background);
-
+  color: var(--text-color);
 }
 
 
 :root {
   --viewport-desktop: "990px";
-  --header-height: 60px;
+  --header-height: 100px;
 }
 
 @media (min-width: 990px) {

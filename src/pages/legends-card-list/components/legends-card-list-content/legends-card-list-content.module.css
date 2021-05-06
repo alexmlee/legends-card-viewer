@@ -1,5 +1,5 @@
 .listContainer {
-  padding: 20px 10px
+  padding: 20px 10px;
 }
 
 .preloader {
@@ -18,7 +18,7 @@
 }
 
 .noMoreResults {
-  width: 320px;
+  max-width: 320px;
   margin:auto;
   background: var(--primary);
   color: white;
@@ -28,9 +28,20 @@
   border-radius: 2px
 }
 
+.searchBar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchBar > * {
+  margin-bottom: 10px;
+}
+
 @media (min-width: 990px) {
   .listContainer {
-    max-width: 1400px;
+    max-width: 1140px;
     margin: auto;
   }
 }

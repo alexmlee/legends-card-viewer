@@ -25,16 +25,19 @@ export const LegendsCardListContent: React.FC<LegendsCardListContentProps> = ({
     setLocalText(event.target.value);
   }
 
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    searchAction(localText);
+  }
 
   return  (
     <>
-      <div className="searchBar">
-        {/* <input type="submit" id="mySubmit" /> */}
-        {/* <button onClick={() => searchAction(localText)}>SEARCH</button> */}
-        <form action='#' onSubmit={() => {searchAction(localText)}}>
-          <input type="text" name="search" value={localText} onChange={handleChange} />
+      <div className={Css.searchBar}>
+        <form action='#' onSubmit={handleSubmit}>
+          <input type="search" name="search" placeholder="Card Name" value={localText} onChange={handleChange} />
           <button type="submit">SEARCH</button>
         </form>
+        <b> Showing {cardList.cards.length} of {cardList._totalCount} cards</b>
       </div>
       <div className={Css.listContainer}>
         <LegendsCardList cardList={cardList} />

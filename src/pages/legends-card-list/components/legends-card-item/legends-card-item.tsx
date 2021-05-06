@@ -10,17 +10,19 @@ export const LegendsCardItem: FC<LegendsCardItemProps> = ({cardData}) => {
   return (
     <div className={Css.legendsCard}>
       {/* Image, Name, Text, Set Name, and Type */}
-      <div className={Css.imageContainer}>
-        <img className={Css.image} src={cardData.imageUrl} alt={cardData.name + " card art"} />
+      <div className={Css.imageAndMainInfo}>
+        <div className={Css.imageContainer}>
+          <img className={Css.image} src={cardData.imageUrl} alt={cardData.name + " card art"} />
+        </div>
+        <div className={Css.textContainer}>
+          <div className={Css.name}>{cardData.name}</div>
+          <div className={Css.text}>{cardData.text}</div>
+        </div>
       </div>
-      <div className={Css.textContainer}>
-        <div className={Css.name}>{cardData.name}</div>
-        <div className={Css.text}>{cardData.text}</div>
-        <div className={Css.setName}>{cardData.set.name}</div>
-        <div className={Css.type}>{cardData.type}</div>
+      <div className={Css.metaData}>
+        <div className={Css.setName}> {cardData.set.name}</div>
+        <div className={Css.type}> {cardData.type}</div>
       </div>
-
-
     </div>
   )
 
