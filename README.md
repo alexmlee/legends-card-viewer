@@ -1,3 +1,50 @@
+# Legends Card Viewer
+
+This is a React-based web-app that allows users to view and search for cards from the game Elder Scrolls Legends.
+
+## Installation
+
+Clone this repo, navigate into the folder, and run `npm install` or `yarn`
+
+# Local Development
+
+Run `npm start` from the repo directory. This will automatically open your browser to `localhost:3000` with the app running.
+
+# Deployment
+
+Run `npm run build` to cut a release build into the `./build` directory
+
+Using Netlify, run `netlify deploy` and inspect the draft release
+
+If satisifed, then run `netlify deploy --prod`
+
+## External Dependencies
+ - Create React App was used to generate the base part of this app, and that includes the collection of react and testing related libraries
+ - Normalize.css - a semi-standard CSS reset tool
+ - Axios - a cleaner alternative to using fetch
+ - React Helmet - a utility for simple modification of the document head
+ - Netlify - although not present in the code base, Netlify is the deployment utility/platform in use
+
+
+## Next Steps
+
+### Code/Design Improvements
+- unit testing
+- accessibility and performance auditing
+- clean up useEffects used in fetching data and infinite scroll
+- improved styling on buttons and other features
+- flesh out theming and use 3rd, 4th, 5th colors
+- error handling, rate limiting in the data fetching
+- clean up / test Social sharing functionality
+
+### Functionality
+
+- add subpages for a single card, allowing user to see all metadata
+- user accounts (AWS cognito)
+- allow users to create and save card lists (local storage, then db)
+
+# Below is create-react-app boilerplate README.md
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

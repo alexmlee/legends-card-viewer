@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { PageInfo, SocialMetaData } from "../base-layout/base-layout"
 
 export interface PageMetaDataProps {
@@ -7,7 +8,7 @@ export interface PageMetaDataProps {
 
 export const PageMetaData: React.FC<PageMetaDataProps> = ({pageInfo, socialMetaData}) => {
   return (
-    <head>
+    <Helmet>
       <title> {pageInfo.title}</title>
       <meta name="description" content={pageInfo.description}/>
       <meta property="og:title" content={pageInfo.title}/>
@@ -22,6 +23,6 @@ export const PageMetaData: React.FC<PageMetaDataProps> = ({pageInfo, socialMetaD
       <meta property="twitter:image" content={socialMetaData.imageUrl}/>
       {/* <meta name="twitter:domain" content={pageInfo.canonicalUrl}/> */}
       <meta name="twitter:url" content={pageInfo.canonicalUrl}/>
-  </head>
+    </Helmet>
   )
 }
