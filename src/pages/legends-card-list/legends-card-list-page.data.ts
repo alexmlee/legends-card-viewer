@@ -5,6 +5,7 @@ export interface CardList {
   _pageSize: number;
   _totalCount: number;
 }
+
 export interface CardData {
   name: string;
   rarity: string;
