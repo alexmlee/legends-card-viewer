@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { BaseLayout } from '../../common/components/base-layout/base-layout';
 import { CARDS_PER_LOAD, ElderScrollsLegends } from './adapters/elder-scrolls-legends-adapter/elder-scrolls-legends-adapter';
 import { LegendsCardListContent } from './components/legends-card-list-content/legends-card-list-content';
-import { CardList } from './legends-card-list-page.data';
+import { CardList, LegendsCardListPageInfo, LegendsCardListPageSocial } from './legends-card-list-page.data';
 
 export interface LegendsCardListPageProps {
   cardList: CardList;
@@ -110,8 +110,8 @@ export const LegendsCardListPage: React.FC = props => {
 
   return (
       <BaseLayout
-        // pageInfo={}
-        // socialMetaData={}
+        pageInfo={LegendsCardListPageInfo}
+        socialMetaData={LegendsCardListPageSocial}
         >
         { error && <div> Error</div>}
         <LegendsCardListContent 
