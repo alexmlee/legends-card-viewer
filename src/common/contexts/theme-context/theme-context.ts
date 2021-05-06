@@ -15,18 +15,18 @@ export type SiteThemes = {
 
 export const THEMES: SiteThemes = {
   default: {
-    primary: '#006dc7',
-    background: '#FFFFF',
-    loader: 'Spin-1s-200px-default.svg',
+    primary: "#006dc7",
+    background: "#FFFFF",
+    loader: "Spin-1s-200px-default.svg",
     "text-color": "black",
-    secondary: '#808080',
-    tertiary: '#eeeeee',
-    quaternary: '#eeeeee',
-    quinary: '#eeeeee',
+    secondary: "#808080",
+    tertiary: "#eeeeee",
+    quaternary: "#eeeeee",
+    quinary: "#eeeeee",
   },
   forest: {
     primary: "#7ea515",
-    loader: 'Spin-1s-200px-forest.svg',
+    loader: "Spin-1s-200px-forest.svg",
     background: "#55470e",
     "text-color": "black",
     secondary: "#7ea515",
@@ -38,15 +38,15 @@ export const THEMES: SiteThemes = {
     primary: "#006dc7",
     background: "#171616",
     "text-color": "white",
-    loader: 'Spin-1s-200px-default.svg',
+    loader: "Spin-1s-200px-default.svg",
     secondary: "#006dc7",
     tertiary: "#141304",
     quaternary: "#241804",
     quinary: "#3f3407",
   },
-}
+};
 
-export type ThemeNames = "default" | "forest" | "dark"
+export type ThemeNames = "default" | "forest" | "dark";
 
 export interface ThemeContextInterface {
   theme: ThemeNames;
